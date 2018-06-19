@@ -10,3 +10,8 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
+
+getConfigResponse(): Observable<HttpResponse<Config>> {
+  return this.http.get<Config>(
+    this.configUrl, { observe: 'response' });
+}
